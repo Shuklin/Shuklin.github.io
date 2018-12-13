@@ -1,0 +1,89 @@
+.dnd-list-container {
+  padding: 8px;
+}
+.dnd-list-container h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.dnd-list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+}
+.dnd-task {
+  position: relative;
+  padding: 20px 30px 20px 10px;
+  font-size: 14px;
+  border-bottom: solid 1px #ccc;
+}
+.dnd-task:not(.dnd-new-task):hover {
+  cursor: move;
+}
+.dnd-task:last-child {
+  border: none;
+}
+.dnd-task.cdk-drag-preview {
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.dnd-new-task {
+  padding: 20px 10px;
+}
+.dnd-new-task input {
+  height: 36px;
+  width: calc(100% - 71px);
+  border: 1px solid rgba(0,0,0,0.12);
+  box-sizing: border-box;
+}
+.dnd-new-task input:focus {
+  outline: none;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+}
+.dnd-add {
+  float: right;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  background: rgb(38,166,154);
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
+  transition: all ease .4s;
+}
+.dnd-add:hover {
+  cursor: pointer;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+  background: #2bbbad;
+}
+.dnd-close {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 9px;
+  top: 18px;
+}
+.dnd-close:hover {
+  cursor: pointer;
+}
+.dnd-close:before {
+  content: "\2716";
+  width: 100%;
+  position: absolute;
+  font-size: 14px;
+  text-align: center;
+}
+@media (min-width: 720px) {
+  .dnd-list-container {
+    width: 33.3333%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}

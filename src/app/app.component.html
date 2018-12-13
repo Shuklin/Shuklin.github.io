@@ -1,0 +1,58 @@
+<div cdkDropListGroup>
+  <div class="dnd-list-container">
+    <h2>To do</h2>
+
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="tasks.todo"
+      class="dnd-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="dnd-task dnd-new-task">
+        <input type="text" #newTodo (keyup.enter)="addTask('todo', newTodo)">
+        <button (click)="addTask('todo', newTodo)" class="dnd-add">add</button>
+      </div>
+      <div class="dnd-task" *ngFor="let item of tasks.todo; let i = index" cdkDrag>
+        {{item}}
+        <div (click)="removeTask('todo',i)" class="dnd-close" title="Remove task"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dnd-list-container">
+    <h2>In progress</h2>
+    <div
+      cdkDropList
+      #progressList="cdkDropList"
+      [cdkDropListData]="tasks.progress"
+      class="dnd-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="dnd-task dnd-new-task">
+        <input type="text" #newProgress (keyup.enter)="addTask('progress', newProgress)">
+        <button (click)="addTask('progress',newProgress)" class="dnd-add">add</button>
+      </div>
+      <div class="dnd-task" *ngFor="let item of tasks.progress; let i = index" cdkDrag>{{item}}
+        <div (click)="removeTask('progress',i)" class="dnd-close" title="Remove task"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dnd-list-container">
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="tasks.done"
+      class="dnd-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="dnd-task dnd-new-task">
+        <input type="text" #newDone (keyup.enter)="addTask('done', newDone)">
+        <button (click)="addTask('done',newDone)" class="dnd-add">add</button>
+      </div>
+      <div class="dnd-task" *ngFor="let item of tasks.done; let i = index" cdkDrag>{{item}}
+        <div (click)="removeTask('done',i)" class="dnd-close" title="Remove task"></div>
+      </div>
+    </div>
+  </div>
+</div>
